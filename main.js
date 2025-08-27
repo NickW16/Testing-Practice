@@ -54,5 +54,25 @@ function caesarCipher(text, shift) {
   return result;
 }
 
+// returns array analysis
+function analyzeArray(array=[]) {
+  let max = Math.max(...array);
+  let min = Math.min(...array);
+  let length = array.length;
+
+  let sum = 0;
+  for(let i = 0; i < array.length; i++){
+    sum += array[i];
+  }
+  let average = sum / array.length;
+
+  return {
+    max,
+    min,
+    length,
+    average,
+  }
+}
+
 // for exporting, it has to be an object
-module.exports = { sum, capitalize, reverseString, calculator, caesarCipher };
+module.exports = { sum, capitalize, reverseString, calculator, caesarCipher, analyzeArray };

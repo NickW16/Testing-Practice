@@ -4,6 +4,7 @@ const { capitalize } = require('./main');
 const { reverseString } = require('./main');
 const { calculator } = require('./main');
 const { caesarCipher } = require('./main');
+const { analyzeArray } = require('./main');
 
 test('adds 1 + 2 to equal 3', () => {
   expect(sum(1, 2)).toBe(3);
@@ -33,3 +34,14 @@ test('Caesar Shift Cipher function works', () => {
   expect(caesarCipher('xyz', 3)).toMatch('abc');
   expect(caesarCipher('Hello, World!', 3)).toMatch('Khoor, Zruog!');
 })
+
+const object = analyzeArray([1,8,3,4,2,6]);
+
+test('Analyze function returns the correct values', () => {
+  expect(object).toEqual({
+    average: 4,
+    min: 1,
+    max: 8,
+    length: 6,
+  });
+});
